@@ -1,0 +1,393 @@
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-noir: #0b0b0b;
+    --color-alabaster: #f7f5f2;
+    --color-pure-white: #ffffff;
+    --color-muted-gray: #767676;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-noir);
+    color: var(--color-pure-white);
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TYPOGRAPHY & BUTTONS --- */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-alabaster);
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-outline-white {
+    border: 1px solid var(--color-pure-white);
+    background: transparent;
+    color: var(--color-pure-white);
+}
+
+.btn-outline-white:hover {
+    background: var(--color-pure-white);
+    color: var(--color-noir);
+}
+
+.btn-solid-black {
+    background: var(--color-noir);
+    color: var(--color-pure-white);
+}
+
+.btn-solid-black:hover {
+    background: #222;
+}
+
+.text-link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-pure-white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-pure-white);
+    padding-bottom: 4px;
+}
+
+/* --- GLOBAL NAVIGATION --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    mix-blend-mode: difference; /* Keeps nav visible across dark & light page sections */
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--color-pure-white);
+    text-decoration: none;
+    letter-spacing: 0.25em;
+}
+
+.nav-link {
+    font-size: 0.7rem;
+    color: var(--color-pure-white);
+    text-decoration: none;
+    margin-left: 25px;
+    letter-spacing: 0.15em;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.menu-btn span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--color-pure-white);
+    margin-bottom: 6px;
+}
+
+/* --- PAGE 1: HERO & MARKETING (DARK) --- */
+.page-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 50px 50px 50px;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-muted-gray);
+    margin-bottom: 30px;
+}
+
+.hero-desc {
+    max-width: 350px;
+    margin-bottom: 40px;
+    color: #aaa;
+}
+
+.hero-content .btn {
+    max-width: 200px;
+}
+
+/* Marketing Split Section */
+.marketing-split {
+    padding: 100px 50px;
+    background-color: #111111;
+}
+
+.split-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 100px;
+    align-items: center;
+}
+
+.section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--color-muted-gray);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.split-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.split-text p {
+    margin-bottom: 35px;
+    max-width: 450px;
+    color: #ccc;
+}
+
+/* --- PAGE 2: PRODUCT DESCRIPTION PAGE (LIGHT) --- */
+.page-pdp {
+    background-color: var(--color-alabaster);
+    color: var(--color-noir);
+    padding: 150px 50px 100px 50px;
+}
+
+.pdp-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 100px;
+}
+
+/* PDP Gallery Grid Layout */
+.pdp-gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumb {
+    width: 60px;
+    height: 75px;
+    background-color: #e0dbd5;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.thumb.active {
+    border-color: var(--color-noir);
+}
+
+.main-pdp-image {
+    flex-grow: 1;
+}
+
+/* Right Side Purchase Panel */
+.pdp-details {
+    padding-top: 20px;
+}
+
+.product-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--color-muted-gray);
+}
+
+.product-title {
+    font-size: 3rem;
+    margin-top: 5px;
+}
+
+.product-type {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--color-muted-gray);
+    margin-bottom: 15px;
+}
+
+.product-rating {
+    font-size: 0.75rem;
+    margin-bottom: 40px;
+}
+
+.rating-count {
+    color: var(--color-muted-gray);
+    margin-left: 5px;
+}
+
+.product-size {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.pdp-details .btn-solid-black {
+    margin-bottom: 15px;
+}
+
+.btn-wishlist {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: var(--color-noir);
+}
+
+.product-description-text p {
+    color: #444;
+    margin-bottom: 20px;
+    max-width: 450px;
+}
+
+/* Technical Details Grid at the bottom of PDP */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin: 100px auto 0 auto;
+    gap: 50px;
+    border-top: 1px solid #e0dbd5;
+    padding-top: 60px;
+}
+
+.spec-col h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    color: var(--color-noir);
+    font-family: var(--font-sans);
+    font-weight: 500;
+}
+
+.spec-list {
+    list-style: none;
+}
+
+.spec-list li {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: #555;
+    font-weight: 300;
+}
+
+.spec-list li strong {
+    font-weight: 500;
+    color: var(--color-noir);
+    display: inline-block;
+    width: 120px;
+}
+
+/* --- IMAGE PLACEHOLDERS FOR MOCKUP PURPOSES --- */
+.image-placeholder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.dark-bottle-bg { height: 650px; background: #161616; border: 1px solid #222; }
+.grid-bg { height: 500px; background: #1a1a1a; }
+.light-bottle-bg { height: 600px; background: #eae5df; color: rgba(0,0,0,0.3); }
+
+/* --- MINIMAL FOOTER --- */
+.minimal-footer {
+    padding: 40px;
+    text-align: center;
+    background: var(--color-noir);
+}
+.minimal-footer p {
+    font-size: 0.7rem;
+    color: var(--color-muted-gray);
+    letter-spacing: 0.15em;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 968px) {
+    .hero-container, .split-container, .pdp-container, .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .navbar { padding: 20px; }
+    .page-hero, .marketing-split, .page-pdp { padding: 80px 20px; }
+    .hero-title { font-size: 2.8rem; }
+    .pdp-gallery { flex-direction: column-reverse; }
+    .thumbnails { flex-direction: row; }
+}
